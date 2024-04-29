@@ -19,7 +19,7 @@ state = {
   ],
   filter: '',
 
-}
+  }
   componentDidMount() {
     const contacts = localStorage.getItem('contacts');
       const parsedContacts = JSON.parse(contacts);
@@ -37,7 +37,7 @@ state = {
       localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
     }
  
-}
+  }
 
 
   onSubmitHandler = ({ name, number }) => {
@@ -87,33 +87,33 @@ state = {
 
 
     return (
-    <div>
-        <MainContainer>
-          <h1>Phonebook</h1>
-          <ContactForm onFormSubmit={this.onSubmitHandler  } />
-          
-          <h2>Contacts</h2>
-          <Filter value={filter} onChange={this.changeFilter} /> 
-          {contacts.length === 0
-            ? <p>empty</p>
-            : <ContactList contacts={this.findContacts()} onDeleteContact={this.deleteContact} />}
-          
-        </MainContainer>
+      <div>
+          <MainContainer>
+            <h1>Phonebook</h1>
+            <ContactForm onFormSubmit={this.onSubmitHandler  } />
+            
+            <h2>Contacts</h2>
+            <Filter value={filter} onChange={this.changeFilter} /> 
+            {contacts.length === 0
+              ? <p>empty</p>
+              : <ContactList contacts={this.findContacts()} onDeleteContact={this.deleteContact} />}
+            
+          </MainContainer>
 
-        {/* налаштування tostify  */}
-        <ToastContainer 
-            position="top-center"
-            autoClose={3000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            theme="colored"
-            />
-    </div>
-  );
+          {/* налаштування tostify  */}
+          <ToastContainer 
+              position="top-center"
+              autoClose={3000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="colored"
+              />
+      </div>
+    );
   }
 };
